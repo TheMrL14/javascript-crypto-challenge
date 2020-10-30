@@ -34,7 +34,6 @@ module.exports = async (peer) => {
     publicKey: keys.publicKey,
     encrypt: (msg) => encryptor.encrypt(msg),
     decrypt: (cipher, nonce) => decryptor.decrypt(cipher, nonce),
-    //use original peer to create and use Shared Keys
     connect: async (connectedPeer) => {
       otherPeer = connectedPeer;
       sharedKeys = nacl.crypto_kx_client_session_keys(
